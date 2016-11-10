@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <title>Лисовская Ю.А.</title>
     <script>
-    
-//    3. ШАХМАТНАЯ ДОСКА ()
-    var row, col, line = '';
-    for (row = 1; row <= 4; row++) {
-        for (col = 1; col <= 4; col++) {
-            if ((row % 2) == 1) {
-                line += ' #'; //нечетная строка
+        //    3. ШАХМАТНАЯ ДОСКА ()
+        var line = '';
+        for (var row = 1; row <= 4; row++) {
+            for (var col = 1; col <= 4; col++) {
+                if ((row % 2) == 1) {
+                    line += ' #'; //нечетная строка
+                } else {
+                    line += '# '; //четная строка
+                }
             }
-            else {
-                line += '# '; //четная строка
-            }
-            
+            line += '\n';
         }
-        line += '\n';
-    }
-    console.log (line);    
-    
+        console.log(line);
+
+        //    3. ШАХМАТНАЯ ДОСКА (с тернарным оператором)
+        var line = '';
+        for (var row = 1; row <= 4; row++) {
+            for (var col = 1; col <= 4; col++) {
+                line += ((row % 2) == 1) ? ' #' : '# ';
+            }
+            line += '\n';
+        }
+        console.log(line);
     </script>
 </head>
+
 <body>
     <p>Адресная книга</p>
 </body>
+
 </html>
