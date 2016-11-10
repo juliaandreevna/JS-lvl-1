@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Лисовская Ю.А.</title>
+    <script>
+        
+        //    4. 
+        
+//        console.log ("строчка".charAt(5));
+//        console.log ("строчка".length);
+        
+        //    4. КОЛИЧЕСТВО СИМВОЛОВ "В"
+        
+        var numberB = 0;
+        
+        function countBs (theStr){
+            for (var i = 0; i < theStr.length; i++) {
+                if (theStr.charAt(i) == "в" || theStr.charAt(i) == "В") {
+                    numberB += 1;
+                }
+            }
+            return numberB;
+        }
+        console.log (countBs("вввпутинВ"));
+        
+        //    4. КОЛИЧЕСТВО СИМВОЛОВ
+        
+        var numberB = 0;
+        
+        function countChar (theStr, symb){
+            var symb = prompt ("Введите символ, который мы будем искать");
+            for (var i = 0; i < theStr.length; i++) {
+                if (theStr.charAt(i) == symb) {
+                    numberB += 1;
+                }
+            }
+            return numberB;
+        }
+        console.log (countChar("вввпутинВ"));        
+       
+    </script>
+</head>
+
+<body>
+    <p>Адресная книга</p>
+</body>
+
+</html>
