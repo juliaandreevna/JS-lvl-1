@@ -6,8 +6,12 @@
     <title>Лисовская Ю.А.</title>
     <script>
         
-        //    4. РЕКУРСИЯ. ЧЕТНОСТЬ
+        /*Ноль чётный. Единица нечётная. У любого числа N чётность такая же, как у N-2.Напишите рекурсивную функцию isEven согласно этим правилам. Она должна принимать число и возвращать булевское значение. Потестируйте её на 50 и 75. Попробуйте задать ей -1. Почему она ведёт себя таким образом? Можно ли её как-то исправить?*/
+        
+        //    4. РЕКУРСИЯ. ЧЕТНОСТЬ (1)
 
+        console.log("1-----");
+        
         function isEven(n) {
             if (n != 1 && n != 0) {
                 return isEven(n -= 2);
@@ -20,6 +24,72 @@
         console.log(!!0);
         console.log(isEven(75));
         console.log(!!1);
+
+        
+        //    4. РЕКУРСИЯ. ЧЕТНОСТЬ (1 c тернарником)
+
+        console.log("1тер--");
+        
+        function isEven(n) {
+            return (n != 1 && n != 0) ? isEven(n -= 2) : !!n ;
+        }
+        
+        console.log(isEven(50));
+        console.log(!!0);
+        console.log(isEven(75));
+        console.log(!!1);
+        
+         //    4. РЕКУРСИЯ. ЧЕТНОСТЬ (2 покорректней)
+
+        console.log("2-----");
+        
+        function isEven(n) {
+            return n > 1 ? isEven(n - 2) : n == 0 ; // + не как стандартный перевод в булеан, 
+        }                                           // а как как ответ на вопрос "четно?"  
+        
+        console.log(isEven(50));
+        console.log(!!0);
+        console.log(isEven(75));
+        console.log(!!1);
+
+        
+        //    4. РЕКУРСИЯ. ЧЕТНОСТЬ (3 учитывая отрицательные числа)
+        
+        console.log("3-----");
+        
+        function isEven(n) {
+            if (n >= 0) {
+                return n > 1 ? isEven(n - 2) : n == 0 ;
+            } else {
+                return isEven (n * (-1));
+            }
+        }
+        
+        console.log(isEven(50));
+        console.log(isEven(75));
+        console.log(isEven(-3));
+        
+        //    4. РЕКУРСИЯ. ЧЕТНОСТЬ (4 c проверкой на целое)
+        
+        console.log("4-----");
+        
+        function isEven(n) {
+            if (n != Math.round(n)) {
+                return "Is double!";
+            }
+            if (n >= 0) {
+                return n > 1 ? isEven(n - 2) : n == 0 ;
+            } else {
+                return isEven (n * (-1));
+            }
+        }
+        
+        console.log(isEven(50));
+        console.log(isEven(75));
+        console.log(isEven(-3));   
+        console.log(isEven(7.5)); 
+        console.log(isEven(-7.5)); 
+        
     </script>
 </head>
 

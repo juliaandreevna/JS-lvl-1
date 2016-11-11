@@ -13,9 +13,8 @@
         
         //    4. КОЛИЧЕСТВО СИМВОЛОВ "В"
         
-        var numberB = 0;
-        
         function countBs (theStr){
+            var numberB = 0;
             for (var i = 0; i < theStr.length; i++) {
                 if (theStr.charAt(i) == "в" || theStr.charAt(i) == "В") {
                     numberB += 1;
@@ -25,11 +24,10 @@
         }
         console.log (countBs("вввпутинВ"));
         
-        //    4. КОЛИЧЕСТВО СИМВОЛОВ
-        
-        var numberB = 0;
+        //    4. КОЛИЧЕСТВО СИМВОЛОВ (I)
         
         function countChar (theStr, symb){
+            var numberB = 0;
             var symb = prompt ("Введите символ, который мы будем искать");
             for (var i = 0; i < theStr.length; i++) {
                 if (theStr.charAt(i) == symb) {
@@ -38,7 +36,38 @@
             }
             return numberB;
         }
-        console.log (countChar("вввпутинВ"));        
+        console.log (countChar("вввпутинВ"));  
+        
+        //    4. КОЛИЧЕСТВО СИМВОЛОВ (II)
+        
+        function countChar (theStr, symb){
+            var numberB = 0;
+            for (var i = 0; i < theStr.length; i++) {
+                if (theStr.charAt(i) == symb) {
+                    numberB += 1;
+                }
+            }
+            return numberB;
+        }
+        console.log (countChar("вввпутинВ", "в"));        
+        
+        //    4. КОЛИЧЕСТВО СИМВОЛОВ (лучшее решение)
+        
+        function countChar (theStr, symb){
+            var numberB = 0;
+            for (var i = 0; i < theStr.length; i++) {
+                if (theStr.charAt(i) == symb) {
+                    numberB += 1;
+                }
+            }
+            return numberB;
+        }
+        function countBs (theStr) {
+            return countChar (theStr, "в")
+        }
+        
+        console.log (countBs("вввпутинВ")); 
+        console.log (countChar("вввпутинВ", "п"));        
        
     </script>
 </head>
