@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Лисовская Ю.А.</title>
+    <script>
+        
+        //    4. РЕКУРСИЯ. ЧЕТНОСТЬ
+
+        function isEven(n) {
+            if (n != 1 && n != 0) {
+                return isEven(n -= 2);
+            } else {
+                return !!n;
+            }
+        }
+        
+        console.log(isEven(50));
+        console.log(!!0);
+        console.log(isEven(75));
+        console.log(!!1);
+    </script>
+</head>
+
+<body>
+    <p>Адресная книга</p>
+</body>
+
+</html>
